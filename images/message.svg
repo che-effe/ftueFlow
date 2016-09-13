@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="52px" height="51px" viewBox="0 0 52 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Messages</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="FTUE-v3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="FTUE-3" transform="translate(-233.000000, -201.000000)" fill="#2C9BD6">
+            <path d="M284.267626,233.538569 C284.267626,235.709387 282.490545,237.486803 280.320135,237.486803 L271.159871,237.486803 L271.159871,252 L257.085383,237.486803 L236.949861,237.486803 C234.777082,237.486803 233,235.709387 233,233.538569 L233,204.948234 C233,202.775046 234.777082,201 236.949861,201 L280.320135,201 C282.490545,201 284.267626,202.775046 284.267626,204.948234 L284.267626,233.538569 Z" id="Messages" transform="translate(258.633813, 226.500000) scale(-1, 1) translate(-258.633813, -226.500000) "></path>
+        </g>
+    </g>
+</svg>

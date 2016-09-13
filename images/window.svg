@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="71px" height="54px" viewBox="0 0 71 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>window</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="FTUE-v3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="FTUE-3" transform="translate(-97.000000, -198.000000)">
+            <g id="window" transform="translate(97.000000, 198.000000)">
+                <polygon id="Fill-211" fill="#FF800C" points="0 53.5253771 70.2509192 53.5253771 70.2509192 48 0 48"></polygon>
+                <path d="M11.6887232,48.44772 L57.3509581,48.44772 L57.3509581,4.8881343 L11.6887232,4.8881343 L11.6887232,48.44772 Z M59.5782658,0.318624549 L9.56817095,0.318624549 C8.18762836,0.318624549 7.06912197,1.43734149 7.06912197,2.81814395 L7.06912197,53.0293634 L62.070036,53.0293634 L62.070036,2.81329052 C62.070036,1.43491477 60.9539559,0.318624549 59.5782658,0.318624549 L59.5782658,0.318624549 Z" id="Fill-213" fill="#FF800C"></path>
+                <path d="M35,4.7716745 L35,26.9543025" id="Stroke-214" stroke="#F59173"></path>
+                <polygon id="Fill-215" fill="#FF800C" points="11.5221719 29.3216678 58 29.3216678 58 24.8103993 11.5221719 24.8103993"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

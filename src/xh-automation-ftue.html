@@ -9,12 +9,649 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
 
 <dom-module id="xh-automation-ftue">
   <template>
     <style>
+    @font-face {
+      font-family: "xfsans_light";
+      src: url("font/XFINITYSans_Light.eot");
+      src: url("font/XFINITYSans_Light.eot?") format("embedded-opentype"),
+           url("font/XFINITYSans_Light.woff") format("woff"),
+           url("font/XXFINITYSans_Light.ttf") format("truetype");
+      font-style: normal;
+      font-weight: normal;
+    }
 
+    @font-face {
+      font-family: "xfsans_exlt";
+      src: url("font/XFINITYSans_ExLight.eot");
+      src: url("font/XFINITYSans_ExLight.eot?") format("embedded-opentype"),
+           url("font/XFINITYSans_ExLight.woff") format("woff"),
+           url("font/XFINITYSans_ExLight.ttf") format("truetype");
+      font-style: normal;
+      font-weight: normal;
+    }
+
+    body {
+        margin:0;
+        font-family: "xfsans_exlt";
+
+
+    }
+
+    a{
+    	text-decoration: none;
+    }
+
+    .view-port{
+    	width: 100%;
+    	height:100vh;
+    	position: absolute;
+    	top:0;
+    	bottom:0;
+    	-webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #one..view-port {
+    	background-image: url("../images/bg-texture.png");
+    }
+
+    #two.view-port {
+    	background-image: url("../images/bg-kidsdoor.png");
+    }
+
+    .view-port.three{
+    	background-image: url("../images/bg-window.png");
+    }
+
+    .view-port.four{
+    	background-image: url("../images/bg-night.png");
+    }
+
+    #close{
+    	position: absolute;
+    	top:16px;
+    	left:16px;
+    }
+
+    #house-box{
+    	position: relative;
+    	top:0px;
+    	height: 350px;
+    	width: 100%;
+    	background-color: rgba(77,196,214,0.1);
+    	text-align: center;
+    	padding: 0px;
+    }
+
+    #house-box-img{
+    	position: absolute;
+    	bottom:-5px;
+    	margin-left:-175px;
+    	left:50%;
+    }
+
+
+    #icons-container{
+    	width: 100%;
+    	position: absolute;
+    	top:160px;
+    	padding-bottom: 50px;
+
+    }
+
+
+    #icons{
+    	width: 260px;
+        margin:0 auto;
+        height:140px;
+        max-width: 100%;
+        max-height: 100%;
+        background-size: cover;
+       	position: relative;
+
+    }
+
+    #left-icon{
+    	width: 136px;
+        height: 136px;
+        position:absolute;
+        left:0;
+        top: 0;
+        background-color: rgba(255,255,255,0.9);
+        border-radius: 136px;
+      	text-align: center;
+    }
+
+    #right-icon{
+    	width: 136px;
+        height: 136px;
+        position:absolute;
+        right:0;
+        top: 0;
+        background-color: rgba(255,255,255,0.9);
+        border-radius: 136px;
+        text-align: center;
+    }
+
+    #icons img{
+    	position: relative;
+    	top:28px;
+
+    }
+
+    #icons img.window{
+    	position: relative;
+    	top:40px;
+    }
+
+    #icons img.phone{
+    	position: relative;
+    	top:50px;
+    	left: 10px;
+    }
+
+    #icons img.message{
+    	position: relative;
+    	top:40px;
+
+    }
+
+    #icons img.bulb{
+    	position: relative;
+    	top:33px;
+
+    }
+
+    #ftue-text{
+    	color: white;
+    	font-family: "xfsans_exlt";
+    	font-size: 32px;
+    	text-align: center;
+    	margin:60px 30px 0px 30px;
+    	line-height: 1.5;
+    }
+
+    #ftue-text-box{
+    	position: absolute;
+    	width: 100%;
+    	top:400px;
+    	color: white;
+    	font-family: "xfsans_exlt";
+    	font-size: 32px;
+    	padding:0px;
+    	line-height: 1.5;
+
+    }
+
+    .ftue-text{
+
+    	text-align: center;
+    	margin:0px 30px 0px 30px;
+    }
+
+    .ftue-text.extra-margin{
+    	margin:0px 60px 0px 60px;
+    }
+
+    #navdot-box{
+    	position: absolute;
+    	bottom: 30px;
+    	left:50%;
+    	width: 60%;
+    	height: 20px;
+    	margin-left: -30%;
+    	text-align: center;
+
+    }
+
+    .navdot{
+    	height: 8px;
+    	width: 8px;
+    	border-radius: 8px;
+    	background-color: #CCCCCC;
+    	opacity: 0.5;
+    	margin-right: 6px;
+    	display: inline-block;
+    }
+
+    .navdot.right{
+    	margin-right: 0px;
+    }
+
+    .navdot.current{
+    	opacity: 1;
+    	background-color: #2B9CD8;
+    }
+
+    .row{
+    	height: 215px;
+    	width: 100%;
+    	overflow: hidden;
+    	clear: left;
+    }
+
+    .row.top{
+    	position: relative;
+    	top:-100px;
+    	background-image: url('../images/card.svg');
+        background-repeat: repeat-x;
+        background-position: -200px;
+    }
+
+    .row.middle{
+    	position: absolute;
+    	top:123px;
+    	background-image: url('../images/card-middle.svg');
+        background-repeat: repeat-x;
+        background-position: center;
+    }
+
+    .row.bottom{
+    	position: absolute;
+    	top:347px;
+    	background-image: url('../images/card.svg');
+        background-repeat: repeat-x;
+       	background-position: -200px;
+    }
+
+
+
+    .card{
+    	width: 320px;
+    	height: 218px;
+    	margin-right: 10px;
+    	background-color: rgba(255,255,255,0.15);
+    	float: left;
+    }
+
+    #icons-container-b{
+    	position: absolute;
+    	top:175px;
+    	width: 100%;
+
+    }
+
+    #icons-b{
+    	width: 200px;
+        margin:0 auto;
+        height:104px;
+        max-width: 100%;
+        max-height: 100%;
+        background-size: cover;
+       	position: relative;
+
+    }
+
+    #left-icon-b{
+    	width: 104px;
+        height: 104px;
+        position:absolute;
+        left:0;
+        top: 0;
+        background-color: rgba(255,255,255,0.9);
+        border-radius: 104px;
+      	text-align: center;
+    }
+
+    #right-icon-b{
+    	width: 104px;
+        height: 104px;
+        position:absolute;
+        right:0;
+        top: 0;
+        background-color: rgba(255,255,255,0.9);
+        border-radius: 104px;
+        text-align: center;
+    }
+
+    #icons-b img.door{
+    	width: 30px;
+    	height: 56px;
+    	position: relative;
+    	top:22px;
+
+    }
+
+    #icons-b img.bulb{
+    	width: 30px;
+    	height: 52px;
+    	position: relative;
+    	top:25px;
+
+    }
+
+    #icons-b img.plus{
+    	position: relative;
+    	top:-38px;
+    	left:210px;
+
+    }
+
+    .tile{
+    	position: absolute;
+    	top:60px;
+    	height: 310px;
+    	width: 100%;
+    	background-image: url('../images/card-stretch.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 310px 320px;
+    }
+
+    #icons-container-c{
+    	position: absolute;
+    	top:116px;
+    	width: 100%;
+
+    }
+
+    #button-container{
+    	width: 100%;
+    	position: relative;
+    	top: 510px;
+    	left: 0;
+    	padding: 24px 0px 24px 0px;
+    }
+
+
+    .button{
+    	width: 160px;
+    	height: 37px;
+    	background-color: #2B9CD8;
+    	text-align: center;
+    	padding:15px 10px 0px 10px;
+    	font-family: 'xfsans_light';
+    	font-size: 13pt;
+    	color: white;
+    	letter-spacing: .02em;
+    	border-radius: 52px;
+    	}
+
+    .center{
+    	margin:0 auto;
+    }
+
+    #card-text-container{
+    	position: absolute;
+    	top:230px;
+    	width: 100%;
+    }
+
+    #card-text{
+    	width: 260px;
+    	margin: 0 auto;
+    }
+
+    #card-text img{
+    	float: left;
+    	margin: 15px 9px 0px 0px;
+    }
+
+    #advance-left{
+    	position: absolute;
+    	top:0px;
+    	left: 0px;
+    	height: 100vh;
+    	width: 35%;
+    }
+
+
+    #advance-right{
+    	position: absolute;
+    	top:0px;
+    	right: 0px;
+    	height: 100vh;
+    	width: 35%;
+    }
+
+
+      /* For desktop: */
+
+    @media only screen and (min-width: 768px) {
+
+    #one.view-port{
+    	background-image: url("../images/bg-texture-ipad.png");
+    }
+
+    #two.view-port{
+    	background-image: url("../images/bg-kidsdoor-ipad.png");
+
+    }
+
+    .view-port.three{
+    	background-image: url("../images/bg-window-ipad.png");
+    }
+
+    .view-port.four{
+    	background-image: url("../images/bg-night-ipad.png");
+    }
+
+    #icons-container{
+    	position: absolute;
+    	top: 34vh;
+    }
+
+    #ftue-text-box{
+    	position: absolute;
+    	top:56vh;
+    }
+
+
+    #ftue-text-box.start{
+    	position: absolute;
+    	top:525px;
+    }
+
+    #ftue-text{
+
+    	margin:80px 200px 0px 200px;
+    }
+
+    .row.top{
+    	position: static;
+    	top:-300px;
+    	background-image: url('../images/card.svg');
+        background-repeat: repeat-x;
+        background-position: -200px;
+    }
+
+    .row.middle{
+    	position: static;
+    	margin-top: 10px;
+    	background-image: url('../images/card-middle.svg');
+        background-repeat: repeat-x;
+        background-position: center;
+    }
+
+    .row.bottom{
+    	position: static;
+    	margin-top: 10px;
+    	background-image: url('../images/card.svg');
+        background-repeat: repeat-x;
+       	background-position: -200px;
+    }
+
+    #icons-container-b{
+    	position: absolute;
+    	top:280px;
+
+    }
+
+    #house-box{
+    	position: absolute;
+    	height: 50vh;
+    }
+
+    #house-box img{
+    	width:420px;
+    }
+
+    #house-box-img{
+    	margin-left:-220px;
+    	left:50%;
+    }
+
+    .tile{
+    	position: relative;
+    	top:165px;
+    }
+
+    #icons-container-c{
+    	top:215px;
+
+    }
+
+    #card-text-container{
+    	position: absolute;
+    	top:335px;
+    }
+
+    #button-container{
+    	position: absolute;
+    	top: 600px;
+
+    }
+
+    }
+
+    /* iPhone 5 */
+
+    @media only screen
+      and (min-device-width: 320px)
+      and (max-device-width: 370px)
+      and (-webkit-min-device-pixel-ratio: 2) {
+
+      #ftue-text-box{
+      	position: absolute;
+      	top:370px;
+
+      }
+
+      #ftue-text-box{
+
+      	font-size: 27px;
+      	line-height: 1.4;
+
+      }
+
+      .ftue-text{
+
+      	text-align: center;
+      	margin:0px 25px 0px 25px;
+      }
+
+      #button-container{
+      	position: relative;
+      	top: 440px;
+      }
+
+      #navdot-box{
+      	position: absolute;
+      	bottom: 20px;
+
+
+      }
+
+      .tile{
+      	position: absolute;
+      	top:50px;
+      	height: 300px;
+      	width: 100%;
+          background-size: 300px 300px;
+      }
+
+      #icons-container-c{
+      	position: absolute;
+      	top:96px;
+      }
+
+      #card-text-container{
+      	position: absolute;
+      	top:210px;
+      }
+
+      #house-box img{
+      	width:300px;
+      }
+
+      #house-box-img{
+      	position: absolute;
+      	bottom:-5px;
+      	margin-left:-150px;
+      	left:50%;
+      }
+    }
     </style>
+    <div id="one" class="view-port">
+      <div id="house-box">
+        <div id="house-box-img"><img src="../images/house.svg"></div>
+      </div>
+
+      <div id="close"><img src="../images/close-white.svg"></div>
+
+      <div id="ftue-text-box">
+        <div class="ftue-text">
+          Simplify daily activities with Automation
+        </div>
+      </div>
+
+      <div id="navdot-box">
+        <div class="navdot current"></div>
+        <div class="navdot"></div>
+        <div class="navdot"></div>
+        <div class="navdot"></div>
+        <div class="navdot"></div>
+        <div class="navdot right"></div>
+      </div>
+
+
+      <a href="FTUE-2.html">
+        <div id="advance-right"></div>
+      </a>
+
+    </div>
+    <div id="two" class="view-port">
+
+      <div id="close"><img src="../images/close-white.svg"></div>
+
+      <div id="icons-container">
+        <div id="icons">
+
+          <div id="left-icon"><img src="../images/door-open.svg"></div>
+          <div id="right-icon"><img src="../images/camera.svg"></div>
+
+        </div>
+      </div>
+
+      <div id="ftue-text-box">
+        <div class="ftue-text">
+          See who's coming and going
+        </div>
+      </div>
+
+      <div id="navdot-box">
+        <div class="navdot"></div>
+        <div class="navdot current"></div>
+        <div class="navdot"></div>
+        <div class="navdot"></div>
+        <div class="navdot"></div>
+        <div class="navdot right"></div>
+      </div>
+
+      <a href="FTUE-1.html">
+        <div id="advance-left"></div>
+      </a>
+
+      <a href="FTUE-3.html">
+        <div id="advance-right"></div>
+      </a>
+    </div>
 
   </template>
 
