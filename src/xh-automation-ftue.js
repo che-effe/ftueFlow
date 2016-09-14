@@ -21,9 +21,9 @@
     },
 
     ready: function() {
-      debugger;
-      pageWidth = this.$.one.offsetWidth;
-      this.$.two.style.left = pageWidth + 'px';
+      // debugger;
+      // pageWidth = this.$.one.offsetWidth;
+      // this.$.two.style.left = pageWidth + 'px';
     },
 
     _pageChanged: function(page) {
