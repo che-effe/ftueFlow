@@ -15,6 +15,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="xh-automation-ftue">
   <template>
     <style>
+     * {
+       user-select: none;
+     }
     iron-swipeable-pages {
       position: relative;
       display: block;
@@ -231,7 +234,7 @@ a{
   margin-right: 0px;
 }
 
-.navdot.current{
+.navdot[selected]{
   opacity: 1;
   background-color: #2B9CD8;
 }
@@ -597,99 +600,124 @@ a{
 }
 
     </style>
-    <iron-swipeable-pages threshold="0.2" style="touch-action: pan-y;" selected="0">
-      <div id="one" class="view-port">
+    <iron-swipeable-pages threshold="0.2" style="touch-action: pan-y;" selected="{{ activePage }}">
+
+      <div id="one" view="1" class="view-port">
         <div id="house-box">
           <div id="house-box-img"><img src="../images/house.svg"></div>
         </div>
-
         <div id="close"><img src="../images/close-white.svg"></div>
-
         <div id="ftue-text-box">
           <div class="ftue-text">
             Simplify daily activities with Automation
           </div>
         </div>
-
-
       </div>
 
-
-      <div id="two" class="view-port">
+      <div id="two" view="2" class="view-port">
         <div id="close"><img src="../images/close-white.svg"></div>
-
         <div id="icons-container">
           <div id="icons">
-
             <div id="left-icon"><img src="../images/door-open.svg"></div>
             <div id="right-icon"><img src="../images/camera.svg"></div>
-
           </div>
         </div>
-
         <div id="ftue-text-box">
           <div class="ftue-text">
             See who's coming and going
           </div>
         </div>
-
-
       </div>
-      <div id="three" class="view-port">
-        <div id="close"><img src="../images/close-white.svg"></div>
 
+      <div id="three" view="3" class="view-port">
+        <div id="close"><img src="../images/close-white.svg"></div>
         <div id="icons-container">
           <div id="icons">
-
             <div id="left-icon"><img class="window" src="../images/window.svg"></div>
             <div id="right-icon"><img class="phone" src="../images/phone.svg"><img class="message" src="../images/message.svg"></div>
-
           </div>
         </div>
-
         <div id="ftue-text-box">
           <div class="ftue-text">
             Know if a window was left open
           </div>
         </div>
-
-      
-
       </div>
-      <div id="four" class="view-port">
-        <div id="close"><img src="../images/close-white.svg"></div>
 
+      <div id="four" view="4" class="view-port">
+        <div id="close"><img src="../images/close-white.svg"></div>
         <div id="icons-container">
           <div id="icons">
-
             <div id="left-icon"><img src="../images/door-open.svg"></div>
             <div id="right-icon"><img class="bulb" src="../images/bulb.svg"></div>
-
           </div>
         </div>
-
         <div id="ftue-text-box">
         <div class="ftue-text">
         Turn the light on when you get up at night
         </div>
         </div>
-
-
-
       </div>
 
+      <div id="one"  view="5" class="view-port">
+        <div id="close"><img src="../images/close-white.svg">
+        </div>
+        <div class="row top">
+        </div>
+        <div class="row middle">
+        </div>
+        <div class="row bottom">
+        </div>
+        <div id="icons-container-b">
+          <div id="icons-b">
+            <div id="left-icon-b"><img class="door" src="../images/door-open.svg"></div>
+            <div id="right-icon-b"><img class="bulb" src="../images/bulb.svg"></div>
+            <img class="plus" src="../images/plus.svg">
+          </div>
+        </div>
+        <div id="ftue-text-box" class="start"><div class="ftue-text extra-margin"> Start by choosing a rule...</div></div>
+      </div>
 
-
-      <div>Two</div>
-      <div>Three</div>
+      <div id="one" view="6" class="view-port">
+        <div id="close"><img src="../images/close-white.svg"></div>
+        <div class="tile"></div>
+        <div id="icons-container-c">
+          <div id="icons-b">
+            <div id="left-icon-b"><img class="door" src="../images/door-open.svg"></div>
+            <div id="right-icon-b"><img class="bulb" src="../images/bulb.svg"></div>
+          </div>
+        </div>
+        <div id="card-text-container">
+          <div id="card-text">
+            <img src="../images/text-when-front.svg">
+            <img src="../images/text-turn-on.svg">
+            <img src="../images/text-living.svg">
+          </div>
+        </div>
+        <div id="ftue-text-box" class="start">
+          <div class="ftue-text extra-margin">
+            Customize it to fit your needs
+          </div>
+        </div>
+        <a href="FTUE-1.html">
+          <div id="button-container">
+            <div class="button center">
+              Get Started
+            </div>
+          </div>
+        </a>
+      </div>
     </iron-swipeable-pages>
     <div id="navdot-box">
-      <div class="navdot"></div>
-      <div class="navdot"></div>
-      <div class="navdot"></div>
-      <div class="navdot current"></div>
-      <div class="navdot"></div>
-      <div class="navdot right"></div>
+      <template is="dom-if" if="[[ swipeComplete ]]" restamp>
+        <div class="navdot" selected$="{{_checkActivePage(1)}}"></div>
+        <div class="navdot" selected$="{{_checkActivePage(2)}}"></div>
+        <div class="navdot" selected$="{{_checkActivePage(3)}}"></div>
+        <div class="navdot" selected$="{{_checkActivePage(4)}}"></div>
+        <div class="navdot" selected$="{{_checkActivePage(5)}}"></div>
+        <div class="navdot right" selected$="{{ _checkActivePage(6) }}"></div>
+      </template>
+
     </div>
 
   </template>
