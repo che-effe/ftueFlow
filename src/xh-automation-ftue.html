@@ -708,6 +708,19 @@ a{
         </a>
       </div>
     </iron-swipeable-pages>
+    <div id="icons-container">
+      <template is="dom-if" if="[[iconsReady]]" restamp>
+        <div id="icons">
+          <div id="left-icon"><img src="[[ _getIcon(0) ]]"></div>
+          <div id="right-icon"><img class="" src="[[ _getIcon(1) ]]">
+            <template is="dom-if" if="[[ _getIcon(2) ]]">
+              <img class="message" src="[[ _getIcon(2) ]]">
+            </template>
+          </div>
+        </div>
+      </template>
+
+    </div>
     <div id="navdot-box">
       <template is="dom-if" if="[[ swipeComplete ]]" restamp>
         <div class="navdot" selected$="{{_checkActivePage(1)}}"></div>

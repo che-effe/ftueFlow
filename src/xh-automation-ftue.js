@@ -14,26 +14,70 @@
       swipeComplete: {
         type: Boolean,
         value: true
+      },
+
+      icons: {
+        type: Object,
+        value: {
+          'door': '../images/door-open.svg',
+          'camera': '../images/camera.svg',
+          'phone': '../images/phone.svg',
+          'message': '../images/message.svg',
+          'window': '../images/window.svg',
+          'bulb': '../images/bulb.svg'
+        }
+      },
+      iconSet: {
+        type: Array,
+        value: []
+      },
+      iconsReady: {
+        type: Boolean,
+        value: false
       }
     },
 
     ready: function() {
-      // debugger;
-      // pageWidth = this.$.one.offsetWidth;
-      // this.$.two.style.left = pageWidth + 'px';
+
+    },
+
+    _getIcon: function(index) {
+      return this.iconSet[index];
     },
 
     _pageChanged: function() {
       this.swipeComplete = false;
+      this.iconsReady = false;
       setTimeout(function(){
         this.swipeComplete = true;
+        this.swapIcons(this.activePage);
       }.bind(this), 1);
-      // Load page import on demand. Show 404 page if fails
-      // var resolvedPageUrl = this.resolveUrl('my-' + page + '.html');
-      // this.importHref(resolvedPageUrl, null, this._showPage404, true);
+
     },
+
     _checkActivePage: function(page) {
+      this.swapIcons(this.activePage);
       return (page - 1) === this.activePage;
+    },
+
+    swapIcons: function(pageNum) {
+      debugger;
+      switch(pageNum){
+        case 0:
+        case 1:
+          this.iconSet = [this.icons.door, this.icons.camera];
+          break;
+        case 2:
+          this.iconSet = [this.icons.window, this.icons.phone, this.icons.message];
+          break;
+        case 3:
+        case 4:
+        case 5:
+          this.iconSet = [this.icons.door, this.icons.bulb];
+          break;
+
+      }
+      this.iconsReady = true;
     }
   });
 }());
