@@ -15,6 +15,49 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <dom-module id="xh-automation-ftue">
   <template>
     <style>
+
+    /*#icons[homescene] div:first-child {
+      left: 115px;
+      top: -144px;
+
+    }
+    #icons[homescene] div:last-child {
+      left: 223px;
+      top: -168px;
+    }*/
+    #icons[homescene] div {
+      width: 30px;
+      height: 30px;
+      transition: width 0.2s ease-out, height 0.2s ease-out, top 0.2s ease-out, left 0.2s ease-out;
+
+    }
+    #icons:not([homescene]) div {
+      width: 136px;
+      height: 136px;
+      transition: width 0.2s ease-out, height 0.2s ease-out, top 0.2s ease-out, left 0.2s ease-out;
+
+    }
+
+    #icons[homescene] img {
+      position: relative;
+      top: 3px;
+      height: 75%;
+
+    }
+
+    #icons img {
+      transition: width 0.2s ease-out, height 0.2s ease-out, top 0.2s ease-out, left 0.2s ease-out;
+
+    }
+    #icons[homescene] div:first-child {
+      left: 125px;
+      top: -28px;
+
+    }
+    #icons[homescene] div:last-child {
+      left: 215px;
+      top: -48px;
+    }
      * {
        user-select: none;
      }
@@ -128,8 +171,6 @@ a{
 }
 
 #left-icon{
-  width: 136px;
-    height: 136px;
     position:absolute;
     left:0;
     top: 0;
@@ -139,8 +180,6 @@ a{
 }
 
 #right-icon{
-  width: 136px;
-    height: 136px;
     position:absolute;
     right:0;
     top: 0;
@@ -424,6 +463,27 @@ a{
   /* For desktop: */
 
 @media only screen and (min-width: 768px) {
+#icons[homescene] div {
+  width: 36px;
+  height: 36px;
+  transition: width 0.2s ease-out, height 0.2s ease-out, top 0.2s ease-out, left 0.2s ease-out;
+
+}
+#icons[homescene] img {
+  position: relative;
+  top: 3px;
+  height: 75%;
+}
+
+#icons[homescene] div:first-child {
+  left: 115px;
+  top: -144px;
+
+}
+#icons[homescene] div:last-child {
+  left: 223px;
+  top: -168px;
+}
 
 #one.view-port {
   background-image: url("../images/bg-texture-ipad.png");
@@ -537,6 +597,22 @@ a{
   and (max-device-width: 370px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
+#icons[homescene] div {
+  width: 30px;
+  height: 30px;
+  transition: width 0.2s ease-out, height 0.2s ease-out, top 0.2s ease-out, left 0.2s ease-out;
+
+}
+#icons[homescene] div:first-child {
+  left: 125px;
+  top: -28px;
+
+}
+#icons[homescene] div:last-child {
+  left: 215px;
+  top: -48px;
+}
+
 #ftue-text-box{
   position: absolute;
   top:370px;
@@ -616,12 +692,7 @@ a{
 
       <div id="two" view="2" class="view-port">
         <div id="close"><img src="../images/close-white.svg"></div>
-        <div id="icons-container">
-          <div id="icons">
-            <div id="left-icon"><img src="../images/door-open.svg"></div>
-            <div id="right-icon"><img src="../images/camera.svg"></div>
-          </div>
-        </div>
+
         <div id="ftue-text-box">
           <div class="ftue-text">
             See who's coming and going
@@ -631,12 +702,6 @@ a{
 
       <div id="three" view="3" class="view-port">
         <div id="close"><img src="../images/close-white.svg"></div>
-        <div id="icons-container">
-          <div id="icons">
-            <div id="left-icon"><img class="window" src="../images/window.svg"></div>
-            <div id="right-icon"><img class="phone" src="../images/phone.svg"><img class="message" src="../images/message.svg"></div>
-          </div>
-        </div>
         <div id="ftue-text-box">
           <div class="ftue-text">
             Know if a window was left open
@@ -646,12 +711,6 @@ a{
 
       <div id="four" view="4" class="view-port">
         <div id="close"><img src="../images/close-white.svg"></div>
-        <div id="icons-container">
-          <div id="icons">
-            <div id="left-icon"><img src="../images/door-open.svg"></div>
-            <div id="right-icon"><img class="bulb" src="../images/bulb.svg"></div>
-          </div>
-        </div>
         <div id="ftue-text-box">
         <div class="ftue-text">
         Turn the light on when you get up at night
@@ -710,7 +769,7 @@ a{
     </iron-swipeable-pages>
     <div id="icons-container">
       <template is="dom-if" if="[[iconsReady]]" restamp>
-        <div id="icons">
+        <div id="icons" homescene$="[[homesceneInView]]">
           <div id="left-icon"><img src="[[ _getIcon(0) ]]"></div>
           <div id="right-icon"><img class="" src="[[ _getIcon(1) ]]">
             <template is="dom-if" if="[[ _getIcon(2) ]]">

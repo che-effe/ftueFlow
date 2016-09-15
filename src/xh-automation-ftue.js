@@ -34,6 +34,10 @@
       iconsReady: {
         type: Boolean,
         value: false
+      },
+      homesceneInView: {
+        type: Boolean,
+        value: true
       }
     },
 
@@ -57,11 +61,21 @@
 
     _checkActivePage: function(page) {
       this.swapIcons(this.activePage);
+      if (this.activePage === 0 ){
+        setTimeout(function(){
+          this.homesceneInView = true;
+        }.bind(this), 3);
+      } else {
+        setTimeout(function(){
+          this.homesceneInView = false;
+        }.bind(this), 3);
+      }
+
+
       return (page - 1) === this.activePage;
     },
 
     swapIcons: function(pageNum) {
-      debugger;
       switch(pageNum){
         case 0:
         case 1:
