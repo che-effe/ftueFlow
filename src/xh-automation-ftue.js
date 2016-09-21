@@ -27,6 +27,17 @@
           'bulb': '../images/bulb.svg'
         }
       },
+
+      backgrounds: {
+        type: Object,
+        value: {
+          'texture': '../images/bg-texture.png',
+          'kidsdoor': '../images/bg-kidsdoor.png',
+          'window': '../images/bg-window.png',
+          'night': '../images/bg-night.png'
+        }
+      },
+
       iconSet: {
         type: Array,
         value: []
@@ -76,22 +87,52 @@
     },
 
     swapIcons: function(pageNum) {
-      switch(pageNum){
-        case 0:
-        case 1:
-          this.iconSet = [this.icons.door, this.icons.camera];
-          break;
-        case 2:
-          this.iconSet = [this.icons.window, this.icons.phone, this.icons.message];
-          break;
-        case 3:
-        case 4:
-        case 5:
-          this.iconSet = [this.icons.door, this.icons.bulb];
-          break;
-
+      var mainBg = this.$.mainBg;
+      if(!mainBg) {
+        return;
       }
+      this.$.mainBg.classList.add('hide');
+
+      setTimeout(function() {
+        switch(pageNum){
+          case 0:
+            this.$.mainBg.style = 'background-image: url(\'' + this.backgrounds.texture + '\');'
+            this.iconSet = [this.icons.door, this.icons.camera];
+
+            break;
+          case 1:
+            this.$.mainBg.style = 'background-image: url(\'' + this.backgrounds.kidsdoor + '\');'
+            this.iconSet = [this.icons.door, this.icons.camera];
+            Polymer.dom(this).style = 'background-image: url(\'' + this.backgrounds.kidsdoor + '\');'
+            break;
+          case 2:
+            this.$.mainBg.style = 'background-image: url(\'' + this.backgrounds.window + '\');'
+
+            this.iconSet = [this.icons.window, this.icons.phone, this.icons.message];
+            Polymer.dom(this).style = 'background-image: url(\'' + this.backgrounds.window + '\');'
+            break;
+          case 3:
+            this.$.mainBg.style = 'background-image: url(\'' + this.backgrounds.night + '\');'
+            Polymer.dom(this).style = 'background-image: url(\'' + this.backgrounds.night + '\');'
+
+            break;
+          case 4:
+            this.$.mainBg.style = 'background-image: url(\'' + this.backgrounds.texture + '\');'
+            this.iconSet = [this.icons.door, this.icons.bulb];
+
+            break;
+          case 5:
+            this.iconSet = [this.icons.door, this.icons.bulb];
+            break;
+          default:
+          this.$.mainBg.style = 'background-image: url(\'' + this.backgrounds.texture + '\');'
+        }
+
+      }.bind(this), 200);
       this.iconsReady = true;
+      setTimeout(function() {
+        this.$.mainBg.classList.remove('hide');
+      }.bind(this), 200);
     }
   });
 }());
