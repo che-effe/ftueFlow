@@ -40,7 +40,7 @@
 
       iconSet: {
         type: Array,
-        value: []
+        value: ['../images/door-open.svg', '../images/camera.svg']
       },
       iconsReady: {
         type: Boolean,
@@ -71,7 +71,7 @@
     },
 
     _checkActivePage: function(page) {
-      this.swapIcons(this.activePage);
+      // this.swapIcons(this.activePage);
       if (this.activePage === 0 ){
         setTimeout(function(){
           this.homesceneInView = true;
@@ -93,54 +93,52 @@
         return;
       }
       this.$.mainBg.classList.add('hide');
-      this.iconSet = [this.icons.door, this.icons.camera];
 
+      switch(pageNum){
+        case 0:
+          bgImage = this.backgrounds.texture;
+          // this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
+          this.iconSet = [this.icons.door, this.icons.camera];
+
+          break;
+        case 1:
+          bgImage = this.backgrounds.kidsdoor;
+          // this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
+          this.iconSet = [this.icons.door, this.icons.camera];
+          break;
+        case 2:
+          bgImage = this.backgrounds.window;
+          // this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
+
+          this.iconSet = [this.icons.window, this.icons.phone, this.icons.message];
+          break;
+        case 3:
+          bgImage = this.backgrounds.night;
+          // this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
+
+          break;
+        case 4:
+          bgImage = this.backgrounds.texture;
+          // this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
+          this.iconSet = [this.icons.door, this.icons.bulb];
+
+          break;
+        case 5:
+          this.iconSet = [this.icons.door, this.icons.bulb];
+          break;
+        default:
+        bgImage = this.backgrounds.texture;
+
+      }
       setTimeout(function() {
-
-        switch(pageNum){
-          case 0:
-            bgImage = this.backgrounds.texture;
-            this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
-            this.iconSet = [this.icons.door, this.icons.camera];
-
-            break;
-          case 1:
-            bgImage = this.backgrounds.kidsdoor;
-            this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
-            this.iconSet = [this.icons.door, this.icons.camera];
-            break;
-          case 2:
-            bgImage = this.backgrounds.window;
-            this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
-
-            this.iconSet = [this.icons.window, this.icons.phone, this.icons.message];
-            break;
-          case 3:
-            bgImage = this.backgrounds.night;
-            this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
-
-            break;
-          case 4:
-            bgImage = this.backgrounds.texture;
-            this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
-            this.iconSet = [this.icons.door, this.icons.bulb];
-
-            break;
-          case 5:
-            this.iconSet = [this.icons.door, this.icons.bulb];
-            break;
-          default:
-          this.$.mainBg.style = 'background-image: url(\'' + this.backgrounds.texture + '\');'
-        }
-
+        this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
+        this.$.mainBg.classList.remove('hide');
       }.bind(this), 200);
       setTimeout( function() {
         this.style = 'background-image: url(\'' + bgImage + '\');'
       }.bind(this), 500);
       this.iconsReady = true;
-      setTimeout(function() {
-        this.$.mainBg.classList.remove('hide');
-      }.bind(this), 200);
+
     }
   });
 }());
