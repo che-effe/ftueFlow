@@ -88,36 +88,41 @@
 
     swapIcons: function(pageNum) {
       var mainBg = this.$.mainBg;
+      var bgImage;
       if(!mainBg) {
         return;
       }
       this.$.mainBg.classList.add('hide');
+      this.iconSet = [this.icons.door, this.icons.camera];
 
       setTimeout(function() {
+
         switch(pageNum){
           case 0:
-            this.$.mainBg.style = 'background-image: url(\'' + this.backgrounds.texture + '\');'
+            bgImage = this.backgrounds.texture;
+            this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
             this.iconSet = [this.icons.door, this.icons.camera];
 
             break;
           case 1:
-            this.$.mainBg.style = 'background-image: url(\'' + this.backgrounds.kidsdoor + '\');'
+            bgImage = this.backgrounds.kidsdoor;
+            this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
             this.iconSet = [this.icons.door, this.icons.camera];
-            Polymer.dom(this).style = 'background-image: url(\'' + this.backgrounds.kidsdoor + '\');'
             break;
           case 2:
-            this.$.mainBg.style = 'background-image: url(\'' + this.backgrounds.window + '\');'
+            bgImage = this.backgrounds.window;
+            this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
 
             this.iconSet = [this.icons.window, this.icons.phone, this.icons.message];
-            Polymer.dom(this).style = 'background-image: url(\'' + this.backgrounds.window + '\');'
             break;
           case 3:
-            this.$.mainBg.style = 'background-image: url(\'' + this.backgrounds.night + '\');'
-            Polymer.dom(this).style = 'background-image: url(\'' + this.backgrounds.night + '\');'
+            bgImage = this.backgrounds.night;
+            this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
 
             break;
           case 4:
-            this.$.mainBg.style = 'background-image: url(\'' + this.backgrounds.texture + '\');'
+            bgImage = this.backgrounds.texture;
+            this.$.mainBg.style = 'background-image: url(\'' + bgImage + '\');'
             this.iconSet = [this.icons.door, this.icons.bulb];
 
             break;
@@ -129,6 +134,9 @@
         }
 
       }.bind(this), 200);
+      setTimeout( function() {
+        this.style = 'background-image: url(\'' + bgImage + '\');'
+      }.bind(this), 500);
       this.iconsReady = true;
       setTimeout(function() {
         this.$.mainBg.classList.remove('hide');
