@@ -31,10 +31,10 @@
       backgrounds: {
         type: Object,
         value: {
-          'texture': '../images/bg-texture.png',
-          'kidsdoor': '../images/bg-kidsdoor.png',
-          'window': '../images/bg-window.png',
-          'night': '../images/bg-night.png'
+          'texture': '../images/bg-texture.jpg',
+          'kidsdoor': '../images/bg-kidsdoor.jpg',
+          'window': '../images/bg-window.jpg',
+          'night': '../images/bg-night.jpg'
         }
       },
 
