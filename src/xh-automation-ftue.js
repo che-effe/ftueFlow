@@ -74,6 +74,10 @@
       this.$.mainBg.classList.remove('kidsdoor');
       this.$.mainBg.classList.remove('window');
       this.$.mainBg.classList.remove('night');
+      this.classList.remove('texture');
+      this.classList.remove('kidsdoor');
+      this.classList.remove('window');
+      this.classList.remove('night');
     },
 
     _checkActivePage: function(page) {
