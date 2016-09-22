@@ -69,15 +69,18 @@
       }.bind(this), 1);
 
     },
-    _clearClasses: function(){
-      this.$.mainBg.classList.remove('texture');
-      this.$.mainBg.classList.remove('kidsdoor');
-      this.$.mainBg.classList.remove('window');
-      this.$.mainBg.classList.remove('night');
-      this.classList.remove('texture');
-      this.classList.remove('kidsdoor');
-      this.classList.remove('window');
-      this.classList.remove('night');
+    _clearClasses: function(scope){
+      if (scope == 'bg'){
+        this.$.mainBg.classList.remove('texture');
+        this.$.mainBg.classList.remove('kidsdoor');
+        this.$.mainBg.classList.remove('window');
+        this.$.mainBg.classList.remove('night');
+      } else if (scope == 'host') {
+        this.classList.remove('texture');
+        this.classList.remove('kidsdoor');
+        this.classList.remove('window');
+        this.classList.remove('night');
+      }
     },
 
     _checkActivePage: function(page) {
@@ -127,17 +130,19 @@
           break;
         case 5:
           this.iconSet = [this.icons.door, this.icons.bulb];
+          bgImage = this.backgrounds.texture;
           break;
         default:
-        bgImage = this.backgrounds.texture;
+          bgImage = this.backgrounds.texture;
 
       }
-      this._clearClasses();
       setTimeout(function() {
+        this._clearClasses('bg');
         this.$.mainBg.classList.add(bgImage);
         this.$.mainBg.classList.remove('hide');
       }.bind(this), 200);
       setTimeout( function() {
+        this._clearClasses('host');
         this.classList.add(bgImage);
       }.bind(this), 500);
       this.iconsReady = true;
