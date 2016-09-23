@@ -172,22 +172,28 @@ a{
 }
 
 #house-box{
-  position: relative;
+  position: absolute;
   top:0px;
   height: 350px;
   width: 100%;
   background-color: rgba(77,196,214,0.1);
   text-align: center;
   padding: 0px;
+  opacity:0 ;
+  -webkit-transition: width 0.5s cubic-bezier(0.05, 0.68, 0.19, 0.96);
 }
 
 #house-box-img{
+  top: 76px;
   position: absolute;
-  bottom:-5px;
-  margin-left:-175px;
+  transform:translateX(-50%);
   left:50%;
 }
 
+#house-box[homescene]{
+ opacity: 1;
+ -webkit-transition: opacity 0.5s cubic-bezier(0.05, 0.68, 0.19, 0.96)
+}
 
 #icons-container{
   width: 100%;
@@ -515,13 +521,13 @@ a{
 }
 
 #icons[homescene] div:first-child {
-  left: 115px;
-  top: -144px;
+  left: 124px;
+  top: -137px;
 
 }
 #icons[homescene] div:last-child {
-  left: 223px;
-  top: -168px;
+  left: 238px;
+  top: -162px;
 }
 
 /*#one.view-port {
@@ -595,14 +601,15 @@ a{
   position: absolute;
   height: 50vh;
 }
-
-#house-box img{
-  width:420px;
+#house-box-img {
+  top:0;
+  position: absolute;
+  height: 50vh;
 }
 
-#house-box-img{
-  margin-left:-220px;
-  left:50%;
+#house-box-img img{
+  height: 41vh;
+  margin-top: 74px;
 }
 
 .tile{
@@ -704,23 +711,16 @@ a{
   width:300px;
 }
 
-#house-box-img{
-  position: absolute;
-  bottom:-5px;
-  margin-left:-150px;
-  left:50%;
-}
-
 }
 
     </style>
     <div id="mainBg" class="view-port">
     </div>
+    <div id="house-box" homescene$="[[homesceneInView]]">
+    </div>
     <iron-swipeable-pages threshold="0.2" style="touch-action: pan-y;" selected="{{ activePage }}">
         <div id="one" view="1" class="view-port">
-          <div id="house-box">
-            <div id="house-box-img"><img src="../images/house.svg"></div>
-          </div>
+          <div id="house-box-img"><img src="../images/house.svg"></div>
           <div id="ftue-text-box">
             <div class="ftue-text">
               Simplify daily activities with Automation
