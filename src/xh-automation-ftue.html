@@ -192,7 +192,7 @@ a{
 
 #house-box[homescene]{
  opacity: 1;
- -webkit-transition: opacity 0.5s cubic-bezier(0.05, 0.68, 0.19, 0.96)
+ -webkit-transition: opacity 0.5s cubic-bezier(0.05, 0.68, 0.19, 0.96);
 }
 
 #icons-container{
@@ -200,7 +200,17 @@ a{
   position: absolute;
   top:160px;
   padding-bottom: 50px;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s cubic-bezier(0.05, 0.68, 0.19, 0.96);
+  -webkit-transition-delay: 2; /* Safari*/
+  transition-delay: 2;
+}
 
+#icons-container[hide]{
+  -webkit-transition: opacity 0.5s cubic-bezier(0.05, 0.68, 0.19, 0.96);
+  -webkit-transition-delay: 2; /* Safari*/
+  transition-delay: 2;
+  opacity: 0;
 }
 
 
@@ -729,7 +739,19 @@ a{
         </div>
 
         <div id="two" view="2" class="view-port">
+          <div id="icons-container" hide$="[[homesceneInView]]">
 
+          <template is="dom-if" if="[[iconsReady]]" restamp>
+            <div id="icons">
+              <div id="left-icon"><img src="[[ _getIcon(0) ]]"></div>
+              <div id="right-icon"><img class="" src="[[ _getIcon(1) ]]">
+                <template is="dom-if" if="[[ _getIcon(2) ]]">
+                  <img class="message" src="[[ _getIcon(2) ]]">
+                </template>
+              </div>
+            </div>
+          </template>
+        </div>
           <div id="ftue-text-box">
             <div class="ftue-text">
               See who's coming and going
@@ -738,6 +760,19 @@ a{
         </div>
 
         <div id="three" view="3" class="view-port">
+          <div id="icons-container">
+
+          <template is="dom-if" if="[[iconsReady]]" restamp>
+            <div id="icons">
+              <div id="left-icon"><img src="[[ _getIcon(0) ]]"></div>
+              <div id="right-icon"><img class="" src="[[ _getIcon(1) ]]">
+                <template is="dom-if" if="[[ _getIcon(2) ]]">
+                  <img class="message" src="[[ _getIcon(2) ]]">
+                </template>
+              </div>
+            </div>
+          </template>
+        </div>
           <div id="ftue-text-box">
             <div class="ftue-text">
               Know if a window was left open
@@ -746,6 +781,19 @@ a{
         </div>
 
         <div id="four" view="4" class="view-port">
+          <div id="icons-container">
+
+          <template is="dom-if" if="[[iconsReady]]" restamp>
+            <div id="icons">
+              <div id="left-icon"><img src="[[ _getIcon(0) ]]"></div>
+              <div id="right-icon"><img class="" src="[[ _getIcon(1) ]]">
+                <template is="dom-if" if="[[ _getIcon(2) ]]">
+                  <img class="message" src="[[ _getIcon(2) ]]">
+                </template>
+              </div>
+            </div>
+          </template>
+        </div>
           <div id="ftue-text-box">
           <div class="ftue-text">
           Turn the light on when you get up at night
@@ -802,20 +850,20 @@ a{
         </div>
       </iron-swipeable-pages>
       <div id="close"><img src="../images/close-white.svg"></div>
-
-      <div id="icons-container">
-        <template is="dom-if" if="[[iconsReady]]" restamp>
-          <div id="icons" homescene$="[[homesceneInView]]">
-            <div id="left-icon"><img src="[[ _getIcon(0) ]]"></div>
-            <div id="right-icon"><img class="" src="[[ _getIcon(1) ]]">
-              <template is="dom-if" if="[[ _getIcon(2) ]]">
-                <img class="message" src="[[ _getIcon(2) ]]">
-              </template>
+        <div id="icons-container" hide$="[[!homesceneInView]]">
+          <template is="dom-if" if="[[iconsReady]]" restamp>
+            <div id="icons" homescene$="[[homesceneInView]]">
+              <div id="left-icon"><img src="[[ _getIcon(0) ]]"></div>
+              <div id="right-icon"><img class="" src="[[ _getIcon(1) ]]">
+                <template is="dom-if" if="[[ _getIcon(2) ]]">
+                  <img class="message" src="[[ _getIcon(2) ]]">
+                </template>
+              </div>
             </div>
-          </div>
-        </template>
+          </template>
 
-      </div>
+        </div>
+
       <div id="navdot-box">
         <template is="dom-if" if="[[ swipeComplete ]]" restamp>
           <div class="navdot" selected$="{{_checkActivePage(1)}}"></div>
