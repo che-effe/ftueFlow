@@ -144,7 +144,7 @@
       setTimeout( function() {
         this._clearClasses('host');
         this.classList.add(bgImage);
-      }.bind(this), 500);
+      }.bind(this), 800);
       this.iconsReady = true;
 
     }
