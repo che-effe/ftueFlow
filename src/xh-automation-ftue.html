@@ -760,18 +760,12 @@ a{
 
         <div id="two" view="2" class="view-port">
           <div id="icons-container" hide$="[[homesceneInView]]">
-
-          <template is="dom-if" if="[[iconsReady]]" restamp>
             <div id="icons">
-              <div id="left-icon"><img src="[[ _getIcon(0) ]]"></div>
-              <div id="right-icon"><img class="" src="[[ _getIcon(1) ]]">
-                <template is="dom-if" if="[[ _getIcon(2) ]]">
-                  <img class="message" src="[[ _getIcon(2) ]]">
-                </template>
+              <div id="left-icon"><img src="../images/door-open.svg"></div>
+              <div id="right-icon"><img class="" src="../images/camera.svg">
               </div>
             </div>
-          </template>
-        </div>
+          </div>
           <div id="ftue-text-box">
             <div class="ftue-text">
               See who's coming and going
@@ -781,18 +775,14 @@ a{
 
         <div id="three" view="3" class="view-port">
           <div id="icons-container">
-
-          <template is="dom-if" if="[[iconsReady]]" restamp>
-            <div id="icons">
-              <div id="left-icon"><img src="[[ _getIcon(0) ]]"></div>
-              <div id="right-icon"><img class="" src="[[ _getIcon(1) ]]">
-                <template is="dom-if" if="[[ _getIcon(2) ]]">
-                  <img class="message" src="[[ _getIcon(2) ]]">
-                </template>
-              </div>
+          <div id="icons">
+            <div id="left-icon"><img src="../images/window.svg"></div>
+            <div id="right-icon">
+              <img class="" src="../images/phone.svg">
+              <img class="message" src="../images/message.svg">
             </div>
-          </template>
-        </div>
+          </div>
+          </div>
           <div id="ftue-text-box">
             <div class="ftue-text">
               Know if a window was left open
@@ -802,18 +792,12 @@ a{
 
         <div id="four" view="4" class="view-port">
           <div id="icons-container">
-
-          <template is="dom-if" if="[[iconsReady]]" restamp>
             <div id="icons">
-              <div id="left-icon"><img src="[[ _getIcon(0) ]]"></div>
-              <div id="right-icon"><img class="" src="[[ _getIcon(1) ]]">
-                <template is="dom-if" if="[[ _getIcon(2) ]]">
-                  <img class="message" src="[[ _getIcon(2) ]]">
-                </template>
+              <div id="left-icon"><img src="../images/door-open.svg"></div>
+              <div id="right-icon"><img class="" src="../images/bulb.svg">
               </div>
             </div>
-          </template>
-        </div>
+          </div>
           <div id="ftue-text-box">
           <div class="ftue-text">
           Turn the light on when you get up at night
@@ -873,11 +857,8 @@ a{
         <div id="icons-container" hide$="[[!homesceneInView]]">
           <template is="dom-if" if="[[iconsReady]]" restamp>
             <div id="icons" homescene$="[[homesceneInView]]">
-              <div id="left-icon"><img src="[[ _getIcon(0) ]]"></div>
-              <div id="right-icon"><img class="" src="[[ _getIcon(1) ]]">
-                <template is="dom-if" if="[[ _getIcon(2) ]]">
-                  <img class="message" src="[[ _getIcon(2) ]]">
-                </template>
+              <div id="left-icon"><img src="../images/door-open.svg"></div>
+              <div id="right-icon"><img class="" src="../images/camera.svg">
               </div>
             </div>
           </template>
