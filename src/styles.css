@@ -239,6 +239,7 @@ a {
 .icons img {
   position: relative;
   top: 28px;
+  height: 78px;
 }
 
 .icons img.window {

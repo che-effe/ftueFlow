@@ -102,7 +102,6 @@
     },
 
     _checkActivePage: function(page) {
-      // this.swapIcons(this.activePage);
       if (this.activePage === 0 ){
         setTimeout(function(){
           this.homesceneInView = true;
@@ -128,26 +127,20 @@
       switch(pageNum){
         case 0:
           bgImage = this.backgrounds.texture;
-          this.iconSet = [this.icons.door, this.icons.camera];
           break;
         case 1:
           bgImage = this.backgrounds.kidsdoor;
-          this.iconSet = [this.icons.door, this.icons.camera];
           break;
         case 2:
           bgImage = this.backgrounds.window;
-          this.iconSet = [this.icons.window, this.icons.phone, this.icons.message];
           break;
         case 3:
           bgImage = this.backgrounds.night;
-          this.iconSet = [this.icons.door, this.icons.bulb];
           break;
         case 4:
           bgImage = this.backgrounds.texture;
-          this.iconSet = [this.icons.door, this.icons.bulb];
           break;
         case 5:
-          this.iconSet = [this.icons.door, this.icons.bulb];
           bgImage = this.backgrounds.texture;
           break;
         default:

@@ -40,9 +40,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div id="two" view="2" class="view-port">
           <div class="icons-container" hide$="[[homesceneInView]]">
             <div class="icons">
-              <div class="left-icon"><img src="../images/door-open.svg"></div>
+              <template is="dom-if" if="[[iconsReady]]" restamp>
+
+              <div class="left-icon"><img src="../images/door.gif"></div>
               <div class="right-icon"><img class="" src="../images/camera.svg">
               </div>
+            </template>
             </div>
           </div>
           <div class="ftue-text-box">
@@ -55,11 +58,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div id="three" view="3" class="view-port">
           <div class="icons-container">
           <div class="icons">
+            <template is="dom-if" if="[[iconsReady]]" restamp>
+
             <div class="left-icon"><img src="../images/window.svg"></div>
             <div class="right-icon">
-              <img class="" src="../images/phone.svg">
-              <img class="message" src="../images/message.svg">
+              <img class="" src="../images/notify.gif">
             </div>
+          </template>
           </div>
           </div>
           <div class="ftue-text-box">
@@ -72,9 +77,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div id="four" view="4" class="view-port">
           <div class="icons-container">
             <div class="icons">
-              <div class="left-icon"><img src="../images/door-open.svg"></div>
-              <div class="right-icon"><img class="" src="../images/bulb.svg">
+              <template is="dom-if" if="[[iconsReady]]" restamp>
+
+              <div class="left-icon"><img src="../images/door.gif"></div>
+              <div class="right-icon"><img class="" src="../images/light.gif">
               </div>
+            </template>
             </div>
           </div>
           <div class="ftue-text-box">
@@ -95,8 +103,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
           <div class="icons-container-b">
             <div id="icons-b">
-              <div id="left-icon-b"><img class="door" src="../images/door-open.svg"></div>
-              <div id="right-icon-b"><img class="bulb" src="../images/bulb.svg"></div>
+              <div id="left-icon-b"><img class="door" src="../images/door.gif"></div>
+              <div id="right-icon-b"><img class="bulb" src="../images/light.gif"></div>
               <img class="plus" src="../images/plus.svg">
             </div>
           </div>
@@ -107,8 +115,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <div class="tile"></div>
           <div class="icons-container-c">
             <div id="icons-b">
-              <div id="left-icon-b"><img class="door" src="../images/door-open.svg"></div>
-              <div id="right-icon-b"><img class="bulb" src="../images/bulb.svg"></div>
+              <div id="left-icon-b"><img class="door" src="../images/door.gif"></div>
+              <div id="right-icon-b"><img class="bulb" src="../images/light.gif"></div>
             </div>
           </div>
           <div id="card-text-container">
