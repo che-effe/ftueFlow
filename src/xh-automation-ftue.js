@@ -69,6 +69,24 @@
       }.bind(this), 1);
 
     },
+
+    handleTrack: function(e) {
+      // switch(e.detail.state) {
+      //   case 'start':
+      //     this.message = 'Tracking started!';
+      //     break;
+      //   case 'track':
+      //   this.$.leftIcon.style.left = e.detail.x;
+      //     this.message = 'Tracking in progress... ' +
+      //       e.detail.x + ', ' + e.detail.y;
+      //     break;
+      //   case 'end':
+      //     this.message = 'Tracking ended!';
+      //     break;
+      // }
+      // console.log(this.message);
+    },
+
     _clearClasses: function(scope){
       if (scope == 'bg'){
         this.$.mainBg.classList.remove('texture');

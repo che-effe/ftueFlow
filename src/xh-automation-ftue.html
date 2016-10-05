@@ -15,22 +15,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" type="css" href="styles.css">
 
   <template>
-    <div id="preload-01">
+    <div class="preload-01">
     </div>
-    <div id="preload-02">
+    <div class="preload-02">
     </div>
-    <div id="preload-03">
+    <div class="preload-03">
     </div>
-    <div id="preload-04">
+    <div class="preload-04">
     </div>
     <div id="mainBg" class="view-port">
     </div>
     <div id="house-box" homescene$="[[homesceneInView]]">
     </div>
-    <iron-swipeable-pages threshold="0.2" style="touch-action: pan-y;" selected="{{ activePage }}">
+    <iron-swipeable-pages on-track="handleTrack" threshold="0.2" style="touch-action: pan-y;" selected="{{ activePage }}">
         <div id="one" view="1" class="view-port">
           <div id="house-box-img"><img src="../images/house.svg"></div>
-          <div id="ftue-text-box">
+          <div class="ftue-text-box">
             <div class="ftue-text">
               Simplify daily activities with Automation
             </div>
@@ -38,14 +38,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
 
         <div id="two" view="2" class="view-port">
-          <div id="icons-container" hide$="[[homesceneInView]]">
-            <div id="icons">
-              <div id="left-icon"><img src="../images/door-open.svg"></div>
-              <div id="right-icon"><img class="" src="../images/camera.svg">
+          <div class="icons-container" hide$="[[homesceneInView]]">
+            <div class="icons">
+              <div class="left-icon"><img src="../images/door-open.svg"></div>
+              <div class="right-icon"><img class="" src="../images/camera.svg">
               </div>
             </div>
           </div>
-          <div id="ftue-text-box">
+          <div class="ftue-text-box">
             <div class="ftue-text">
               See who's coming and going
             </div>
@@ -53,16 +53,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
 
         <div id="three" view="3" class="view-port">
-          <div id="icons-container">
-          <div id="icons">
-            <div id="left-icon"><img src="../images/window.svg"></div>
-            <div id="right-icon">
+          <div class="icons-container">
+          <div class="icons">
+            <div class="left-icon"><img src="../images/window.svg"></div>
+            <div class="right-icon">
               <img class="" src="../images/phone.svg">
               <img class="message" src="../images/message.svg">
             </div>
           </div>
           </div>
-          <div id="ftue-text-box">
+          <div class="ftue-text-box">
             <div class="ftue-text">
               Know if a window was left open
             </div>
@@ -70,14 +70,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
 
         <div id="four" view="4" class="view-port">
-          <div id="icons-container">
-            <div id="icons">
-              <div id="left-icon"><img src="../images/door-open.svg"></div>
-              <div id="right-icon"><img class="" src="../images/bulb.svg">
+          <div class="icons-container">
+            <div class="icons">
+              <div class="left-icon"><img src="../images/door-open.svg"></div>
+              <div class="right-icon"><img class="" src="../images/bulb.svg">
               </div>
             </div>
           </div>
-          <div id="ftue-text-box">
+          <div class="ftue-text-box">
           <div class="ftue-text">
           Turn the light on when you get up at night
           </div>
@@ -93,19 +93,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
           <div class="row bottom">
           </div>
-          <div id="icons-container-b">
+          <div class="icons-container-b">
             <div id="icons-b">
               <div id="left-icon-b"><img class="door" src="../images/door-open.svg"></div>
               <div id="right-icon-b"><img class="bulb" src="../images/bulb.svg"></div>
               <img class="plus" src="../images/plus.svg">
             </div>
           </div>
-          <div id="ftue-text-box" class="start"><div class="ftue-text extra-margin"> Start by choosing a rule...</div></div>
+          <div class="ftue-text-box" class="start"><div class="ftue-text extra-margin"> Start by choosing a rule...</div></div>
         </div>
 
         <div id="one" view="6" class="view-port">
           <div class="tile"></div>
-          <div id="icons-container-c">
+          <div class="icons-container-c">
             <div id="icons-b">
               <div id="left-icon-b"><img class="door" src="../images/door-open.svg"></div>
               <div id="right-icon-b"><img class="bulb" src="../images/bulb.svg"></div>
@@ -118,7 +118,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <img src="../images/text-living.svg">
             </div>
           </div>
-          <div id="ftue-text-box" class="start">
+          <div class="ftue-text-box" class="start">
             <div class="ftue-text extra-margin">
               Customize it to fit your needs
             </div>
@@ -133,11 +133,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
       </iron-swipeable-pages>
       <div id="close"><img src="../images/close-white.svg"></div>
-        <div id="icons-container" hide$="[[!homesceneInView]]">
+        <div class="icons-container" hide$="[[!homesceneInView]]">
           <template is="dom-if" if="[[iconsReady]]" restamp>
-            <div id="icons" homescene$="[[homesceneInView]]">
-              <div id="left-icon"><img src="../images/door-open.svg"></div>
-              <div id="right-icon"><img class="" src="../images/camera.svg">
+            <div class="icons" homescene$="[[homesceneInView]]">
+              <div id="leftIcon" class="left-icon"><img src="../images/door-open.svg"></div>
+              <div id="rightIcon" class="right-icon"><img class="" src="../images/camera.svg">
               </div>
             </div>
           </template>
