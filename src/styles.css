@@ -468,6 +468,38 @@ a {
 /* For desktop: */
 
 @media only screen and (min-width: 768px) {
+  .preload-01 {
+    background: url("../images/bg-texture.png");
+  }
+
+  .preload-02 {
+    background: url("../images/bg-kidsdoor.png");
+  }
+
+  .preload-03 {
+    background: url("../images/bg-window.png");
+  }
+
+  .preload-03 {
+    background: url("../images/bg-night.png");
+  }
+
+  :host.texture {
+    background-image: url("../images/bg-texture.png");
+  }
+
+  :host.kidsdoor {
+    background-image: url("../images/bg-kidsdoor.png");
+  }
+
+  :host.window {
+    background-image: url("../images/bg-window.png");
+  }
+
+  :host.night {
+    background-image: url("../images/bg-night.png");
+  }
+
   .icons[homescene] div {
     width: 36px;
     height: 36px;
@@ -476,18 +508,17 @@ a {
 
   .icons[homescene] img {
     position: relative;
-    top: 3px;
     height: 75%;
   }
 
   .icons[homescene] div:first-child {
     left: 126px;
-    top: -165px;
+    top: -86px;
   }
 
   .icons[homescene] div:last-child {
-    left: 257px;
-    top: -193px;
+    left: 202px;
+    top: -103px;
   }
 
   .icons-container {
