@@ -149,6 +149,9 @@ a {
   left: 125px;
   top: -28px;
 }
+.icons[homescene] div:first-child img{
+  height:100%;
+}
 
 .icons[homescene] div:last-child {
   left: 215px;
