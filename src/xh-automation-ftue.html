@@ -42,8 +42,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <div class="icons">
               <template is="dom-if" if="[[iconsReady]]" restamp>
 
-              <div class="left-icon"><img src="../images/door.gif"></div>
-              <div class="right-icon"><img class="" src="../images/camera.svg">
+              <div class="left-icon"><img class="gif" src="../images/door.gif"></div>
+              <div class="right-icon"><img class="gif" src="../images/camera.svg">
               </div>
             </template>
             </div>
@@ -60,9 +60,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <div class="icons">
             <template is="dom-if" if="[[iconsReady]]" restamp>
 
-            <div class="left-icon"><img src="../images/window.svg"></div>
+            <div class="left-icon">
+              <img class="window" src="../images/window.svg"></div>
             <div class="right-icon">
-              <img class="" src="../images/notify.gif">
+              <img class="gif notify" src="../images/notify.gif">
             </div>
           </template>
           </div>
@@ -79,8 +80,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <div class="icons">
               <template is="dom-if" if="[[iconsReady]]" restamp>
 
-              <div class="left-icon"><img src="../images/door.gif"></div>
-              <div class="right-icon"><img class="" src="../images/light.gif">
+              <div class="left-icon"><img class="gif" src="../images/door.gif"></div>
+              <div class="right-icon"><img class="gif" src="../images/light.gif">
               </div>
             </template>
             </div>
@@ -103,8 +104,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
           <div class="icons-container-b">
             <div id="icons-b">
-              <div id="left-icon-b"><img class="door" src="../images/door.gif"></div>
-              <div id="right-icon-b"><img class="bulb" src="../images/light.gif"></div>
+              <div id="left-icon-b"><img class="door gif" src="../images/door.gif"></div>
+              <div id="right-icon-b"><img class="bulb gif" src="../images/light.gif"></div>
               <img class="plus" src="../images/plus.svg">
             </div>
           </div>
@@ -115,15 +116,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <div class="tile"></div>
           <div class="icons-container-c">
             <div id="icons-b">
-              <div id="left-icon-b"><img class="door" src="../images/door.gif"></div>
-              <div id="right-icon-b"><img class="bulb" src="../images/light.gif"></div>
+              <div id="left-icon-b"><img class="door gif" src="../images/door.gif"></div>
+              <div id="right-icon-b"><img class="bulb gif" src="../images/light.gif"></div>
             </div>
           </div>
           <div id="card-text-container">
             <div id="card-text">
-              <img src="../images/text-when-front.svg">
-              <img src="../images/text-turn-on.svg">
-              <img src="../images/text-living.svg">
+              <template is="dom-if" if="[[iconsReady]]" restamp>
+
+              <img class="gif" src="../images/text-swap.gif">
+            </template>
             </div>
           </div>
           <div class="ftue-text-box" class="start">

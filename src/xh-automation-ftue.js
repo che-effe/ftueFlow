@@ -60,7 +60,15 @@
       return this.iconSet[index];
     },
 
+    refreshGifs: function() {
+      var gifs = Polymer.dom(this.root).querySelectorAll('img.gif');
+      gifs.forEach(function(gif){
+        gif.src = gif.src + "?D=" + Date.now();
+      });
+    },
+
     _pageChanged: function() {
+      this.refreshGifs();
       this.swipeComplete = false;
       this.iconsReady = false;
       setTimeout(function(){
