@@ -66,25 +66,37 @@
         value: true
       }
     },
-
-    refreshGifs: function() {
+    /**
+     * Enables gifs to replay each time they're parent view is selected by
+     * appending a datestamp as query string to the img src.
+     */
+    _refreshGifs: function() {
       var gifs = Polymer.dom(this.root).querySelectorAll('img.gif');
       gifs.forEach(function(gif){
         gif.src = gif.src + "?D=" + Date.now();
       });
     },
 
+    /**
+     * The page has changed, refresh gifs setu up booleans for forcing restamp
+     * of some items in our markup.
+     */
     _pageChanged: function() {
       this.refreshGifs();
       this.swipeComplete = false;
       this.iconsReady = false;
       setTimeout(function(){
         this.swipeComplete = true;
-        this.swapIcons(this.activePage);
+        this.swapBackground(this.activePage);
       }.bind(this), 1);
 
     },
 
+    /**
+     * This will enable us to use finger swipe position to
+     * add a new level of control to animations
+     * NOTE (CF) currenlty not in use, but may be useful moving forward.
+     */
     handleTrack: function(e) {
       // switch(e.detail.state) {
       //   case 'start':
@@ -102,6 +114,10 @@
       // console.log(this.message);
     },
 
+    /**
+     * Whipe all class names from man BG element or host
+     * this enabled smooth transition of bg images attached to each view.
+     */
     _clearClasses: function(scope){
       if (scope == 'bg'){
         this.$.mainBg.classList.remove('texture');
@@ -116,6 +132,10 @@
       }
     },
 
+    /**
+     * Return the new active page view index
+     * and set homesceneInView boolean accordingly.
+     */
     _checkActivePage: function(page) {
       if (this.activePage === 0 ){
         setTimeout(function(){
@@ -131,7 +151,11 @@
       return (page - 1) === this.activePage;
     },
 
-    swapIcons: function(pageNum) {
+    /**
+     * Temporarily hide the bg markup element with transition set in css
+     * set the new background image based on page/view number.
+     */
+    swapBackground: function(pageNum) {
       var mainBg = this.$.mainBg;
       var bgImage;
       if(!mainBg) {
