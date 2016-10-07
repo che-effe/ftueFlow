@@ -4,18 +4,31 @@
     is: 'xh-automation-ftue',
 
     properties: {
+      /**
+       * an index number to notify the ourside world of the currently active view.
+       * @type Number
+       */
       activePage: {
         type: Number,
         reflectToAttribute: true,
         value: 0,
         observer: '_pageChanged'
       },
-
+      /**
+       * Boolean to disable then restamp the navigation dots template
+       * keeping them up to date
+       * @type Boolean
+       */
       swipeComplete: {
         type: Boolean,
         value: true
       },
 
+      /**
+       * A collection of icon paths. This can be sued to dynamically change the
+       * icons in the icons container if needed.
+       * @type Object
+       */
       icons: {
         type: Object,
         value: {
@@ -28,6 +41,11 @@
         }
       },
 
+      /**
+       * Collection of class names to be assigned to the main background container
+       * of the ftue view to dictate backgrounsd-image from css.
+       * @type Object
+       */
       backgrounds: {
         type: Object,
         value: {
@@ -38,26 +56,26 @@
         }
       },
 
-      iconSet: {
-        type: Array,
-        value: ['../images/door-open.svg', '../images/camera.svg']
-      },
+      /**
+       * Boolean to disable then restamp the icons in markup
+       * this enabled refresh of which icons should be displayed and ensures that
+       * animated gifs will replay each time their view is enabled.
+       * @type Boolean
+       */
       iconsReady: {
         type: Boolean,
         value: false
       },
+
+      /**
+       * This Boolean is used mostly to conditionally style and position the
+       * icons in the first view of the ftue.
+       * @type Boolean
+       */
       homesceneInView: {
         type: Boolean,
         value: true
       }
-    },
-
-    ready: function() {
-
-    },
-
-    _getIcon: function(index) {
-      return this.iconSet[index];
     },
 
     refreshGifs: function() {
