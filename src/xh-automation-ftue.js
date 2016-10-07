@@ -57,17 +57,6 @@
       },
 
       /**
-       * Boolean to disable then restamp the icons in markup
-       * this enabled refresh of which icons should be displayed and ensures that
-       * animated gifs will replay each time their view is enabled.
-       * @type Boolean
-       */
-      iconsReady: {
-        type: Boolean,
-        value: false
-      },
-
-      /**
        * This Boolean is used mostly to conditionally style and position the
        * icons in the first view of the ftue.
        * @type Boolean

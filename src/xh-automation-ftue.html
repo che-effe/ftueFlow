@@ -40,12 +40,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div id="two" view="2" class="view-port">
           <div class="icons-container" hide$="[[homesceneInView]]">
             <div class="icons">
-              <template is="dom-if" if="[[iconsReady]]" restamp>
-
               <div class="left-icon"><img class="gif" src="../images/door.gif"></div>
               <div class="right-icon"><img class="gif" src="../images/camera.gif">
               </div>
-            </template>
             </div>
           </div>
           <div class="ftue-text-box">
@@ -58,14 +55,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div id="three" view="3" class="view-port">
           <div class="icons-container">
           <div class="icons">
-            <template is="dom-if" if="[[iconsReady]]" restamp>
-
             <div class="left-icon">
               <img class="window" src="../images/window.svg"></div>
             <div class="right-icon">
               <img class="gif notify" src="../images/notify.gif">
             </div>
-          </template>
           </div>
           </div>
           <div class="ftue-text-box">
@@ -78,12 +72,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <div id="four" view="4" class="view-port">
           <div class="icons-container">
             <div class="icons">
-              <template is="dom-if" if="[[iconsReady]]" restamp>
-
               <div class="left-icon"><img class="gif" src="../images/door.gif"></div>
               <div class="right-icon"><img class="gif" src="../images/light.gif">
               </div>
-            </template>
             </div>
           </div>
           <div class="ftue-text-box">
@@ -122,10 +113,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </div>
           <div id="card-text-container">
             <div id="card-text">
-              <template is="dom-if" if="[[iconsReady]]" restamp>
-
               <img class="gif" src="../images/text-swap.gif">
-            </template>
             </div>
           </div>
           <div class="ftue-text-box" class="start">
@@ -144,14 +132,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </iron-swipeable-pages>
       <div id="close"><img src="../images/close-white.svg"></div>
         <div class="icons-container" hide$="[[!homesceneInView]]">
-          <template is="dom-if" if="[[iconsReady]]" restamp>
-            <div class="icons" homescene$="[[homesceneInView]]">
-              <div id="leftIcon" class="left-icon"><img src="../images/rule-door-closed.svg"></div>
-              <div id="rightIcon" class="right-icon"><img class="" src="../images/camera.svg">
-              </div>
+          <div class="icons" homescene$="[[homesceneInView]]">
+            <div id="leftIcon" class="left-icon"><img src="../images/rule-door-closed.svg"></div>
+            <div id="rightIcon" class="right-icon"><img class="" src="../images/camera.svg">
             </div>
-          </template>
-
+          </div>
         </div>
 
       <div id="navdot-box">

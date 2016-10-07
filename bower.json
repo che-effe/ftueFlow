@@ -1,5 +1,5 @@
 {
-  "name": "polymer-starter-kit",
+  "name": "xh-automation-ftue",
   "authors": [
     "The Polymer Authors"
   ],
@@ -14,6 +14,7 @@
     "parallax-container": "^1.1.2"
   },
   "devDependencies": {
-    "web-component-tester": "^4.0.0"
+    "web-component-tester": "^4.0.0",
+    "iron-component-page": "PolymerElements/iron-component-page#~1.1.7"
   }
 }
