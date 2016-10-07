@@ -27,7 +27,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </div>
     <div id="house-box" homescene$="[[homesceneInView]]">
     </div>
-    <iron-swipeable-pages on-track="handleTrack" threshold="0.2" style="touch-action: pan-y;" selected="{{ activePage }}">
+    <iron-swipeable-pages no-cycle on-track="handleTrack" threshold="0.2" style="touch-action: pan-y;" selected="{{ activePage }}">
         <div id="one" view="1" class="view-port">
           <div id="house-box-img"><img src="../images/house.svg"></div>
           <div class="ftue-text-box">
