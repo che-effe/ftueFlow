@@ -82,7 +82,7 @@
      * of some items in our markup.
      */
     _pageChanged: function() {
-      this.refreshGifs();
+      this._refreshGifs();
       this.swipeComplete = false;
       this.iconsReady = false;
       setTimeout(function(){
